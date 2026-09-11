@@ -1,23 +1,18 @@
 # AI Customer Summary & Email Automation
 
-AI-powered business workflow that automatically processes
-customer information from Google Sheets, generates an
-LLM-powered summary, and sends the result through Gmail.
+AI-powered business workflow that automatically processes customer information from Google Sheets, generates an LLM-powered summary, and sends the result through Gmail.
 
 ## 🎯 Problem
 
-Customer information stored in spreadsheets often requires
-manual review and communication.
+Customer information stored in spreadsheets often requires manual review and communication, creating repetitive work and slowing down response times.
 
 ## 💡 Solution
 
 This workflow automates the process using n8n and an LLM.
 
-Google Sheets
-→ n8n
-→ OpenAI
-→ Customer Summary
-→ Gmail
+**Workflow:**
+
+Google Sheets → n8n → OpenAI → Customer Summary → Gmail
 
 ## 🏗️ Architecture
 
@@ -40,7 +35,7 @@ Google Sheets
 - Google Sheets integration
 - Gmail integration
 - API orchestration
-- Automated notification
+- Automated email notification
 
 ## 🧰 Tech Stack
 
@@ -53,36 +48,18 @@ Google Sheets
 
 ## 📂 Repository Structure
 
-workflow/   → n8n workflow JSON
-docs/       → Architecture and screenshots
-prompts/    → LLM prompts
-examples/   → Sample input/output
-
-## 🔐 Security
-
-No production credentials or API keys are included.
-
-Use environment variables or n8n credentials for secrets.
-
-## 🚀 Production Improvements
-
-- Error handling
-- Retry mechanism
-- Input validation
-- Structured LLM output
-- Logging
-- Monitoring
-- Rate-limit handling
-- Human approval
-- LLM evaluation
-
-## 🧠 Skills Demonstrated
-
-- Generative AI
-- LLM Integration
-- Prompt Engineering
-- n8n
-- Workflow Automation
-- API Integration
-- Data Processing
-- Business Process Automation
+```text
+.
+├── workflow/
+│   └── customer-summary-email.json
+├── docs/
+│   ├── architecture.png
+│   └── workflow.png
+├── prompts/
+│   └── customer-summary.md
+├── examples/
+│   ├── input.json
+│   └── output.json
+├── .env.example
+├── .gitignore
+└── README.md

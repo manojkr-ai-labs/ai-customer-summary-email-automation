@@ -1,0 +1,143 @@
+{
+  "name": "Master-class-customer-order-01",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1TU7ajF0P_UHk38zxCJEb7Uwiw7ebPp8vE4niXjboJc8",
+          "mode": "list",
+          "cachedResultName": "Customer orders",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TU7ajF0P_UHk38zxCJEb7Uwiw7ebPp8vE4niXjboJc8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TU7ajF0P_UHk38zxCJEb7Uwiw7ebPp8vE4niXjboJc8/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8625b2d7-477a-491c-9219-e5e7fc64a1fe",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "Z6KiFh92XxXb81J2",
+          "name": "Google Sheets Trigger account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "GPT-5-NANO"
+        },
+        "responses": {
+          "values": [
+            {
+              "role": "system",
+              "content": "=You are in charge of client orders. Your job is to take incoming information regarding new orders and create a professional email summary that will be sent to the team.\n\nThe email must be signed off with:\nCustomer Success Team\n\nHere is the information on the client order:\n\nOrder ID: {{ $json['order id'] }}\nCustomer Name: {{ $json['cumtomer name'] }}\nProduct: {{ $json.product }}\nQuantity: {{ $json.quality }}\nPrice: {{ $json.price }}\nOrder Date: {{ $json['order date'] }}\nStatus: {{ $json.Status }}\n\nCreate ONE complete professional email.\n\nInclude:\n- A clear subject line at the top\n- A concise and professional email body\n- Order details in an easy-to-read format\n- A brief closing\n- Sign off exactly as: Customer Success Team\n\nIMPORTANT:\n- Do NOT return separate fields, parameters, JSON, or structured output.\n- Do NOT create separate \"Email Subject\" and \"Email Body\" outputs.\n- Return the complete email as ONE text output.\n- Start with: Subject:\n- Then provide the email body below it."
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3,
+      "position": [
+        224,
+        0
+      ],
+      "id": "03f108f9-614b-4b99-b4d2-489b1b5c1706",
+      "name": "Summary customer-support",
+      "credentials": {
+        "openAiApi": {
+          "id": "Wvj2Jp9GoFbq74J3",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "manojkr6637@gmail.com",
+        "subject": "={{ $json.output[0].content[0].text.split('\\n')[0].replace(/^Subject:\\s*/, '') }}",
+        "emailType": "text",
+        "message": "={{ $json.output[0].content[0].text.split('\\n').slice(1).join('\\n').trim() }}",
+        "options": {
+          "appendAttribution": true
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        592,
+        0
+      ],
+      "id": "7615ce5d-e013-4788-87f0-c6f8dc0a0a41",
+      "name": "Send a message",
+      "webhookId": "648c9aa9-bac1-4514-aa32-c15028642432",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "wQl3ltMmtAUY1bOW",
+          "name": "Gmail account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Summary customer-support",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summary customer-support": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "c7b0d768-913a-446a-8946-0ce0c10fd4dc",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "723d311dd07cac4b8e29cac5ee7eb07af443046f5b535df73de66495a7d839ff"
+  },
+  "nodeGroups": [],
+  "id": "izH3joUmEDHOusok",
+  "tags": []
+}

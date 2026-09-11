@@ -1,0 +1,20 @@
+[
+  {
+    "order id": 2000,
+    "cumtomer name": "Manoj",
+    "product": "Laptop",
+    "quality": 2,
+    "price": 30000,
+    "order date": 46315,
+    "Status": "Success"
+  },
+  {
+    "order id": 3000,
+    "cumtomer name": "raju@gmail.com",
+    "product": "books",
+    "quality": 4,
+    "price": 400,
+    "order date": 46324,
+    "Status": "Pending"
+  }
+]

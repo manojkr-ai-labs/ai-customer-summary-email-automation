@@ -1,0 +1,38 @@
+[
+  {
+    "output": [
+      {
+        "id": "msg_06236ff8c4b7d32d006aa3b94282a087d086b90b37fcb26202",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "Subject: New Order Received - Order #2000\n\nHello Team,\n\nA new order has been placed and is ready for processing.\n\nOrder Details:\n- Order ID: 2000\n- Customer Name: Manoj\n- Product: Laptop\n- Quantity: 2\n- Price: 30000\n- Order Date: 46315\n- Status: Success\n\nPlease initiate fulfillment and update the status as needed. If any issues arise, please reach out.\n\nBest regards,\nCustomer Success Team"
+          }
+        ],
+        "role": "assistant"
+      }
+    ]
+  },
+  {
+    "output": [
+      {
+        "id": "msg_09388b0fec4d26d5006aa3b955634c87d083c0f477a3e73243",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "Subject: New Order Received — Order 3000\n\nHello Team,\n\nA new order has been placed and is currently Pending. Please review the details below and advise on the next steps.\n\nOrder Details:\n- Order ID: 3000\n- Customer Email: raju@gmail.com\n- Product: books\n- Quantity: 4\n- Price: 400\n- Order Date: 46324\n- Status: Pending\n\nNext steps:\n- Verify payment status\n- Confirm inventory for 4 units\n- Prepare for fulfillment and coordinate shipping\n\nPlease update the order status as soon as actions are completed.\n\nBest regards,\nCustomer Success Team"
+          }
+        ],
+        "role": "assistant"
+      }
+    ]
+  }
+]
