@@ -22,6 +22,12 @@ Google Sheets → n8n → OpenAI → Customer Summary → Gmail
 
 ![n8n Workflow](docs/workflow.png)
 
+## 🔄 Video
+
+![n8n Video]
+
+https://drive.google.com/file/d/1SoKim5XZQ-Ex9YhLOFdWQo5ICvKiwuIi/view?usp=sharing
+
 ## 🤖 AI Capabilities
 
 - LLM integration
