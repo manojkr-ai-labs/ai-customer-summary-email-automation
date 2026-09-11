@@ -46,6 +46,21 @@ Google Sheets → n8n → OpenAI → Customer Summary → Gmail
 - JSON
 - REST APIs
 
+## 🧠 Skills Demonstrated
+
+- Generative AI
+- Large Language Models (LLMs)
+- OpenAI API
+- Prompt Engineering
+- n8n Workflow Automation
+- Event-Driven Automation
+- API Integration
+- Google Sheets Integration
+- Gmail Integration
+- JSON Data Processing
+- Workflow Orchestration
+- Business Process Automation
+
 ## 📂 Repository Structure
 
 ```text
